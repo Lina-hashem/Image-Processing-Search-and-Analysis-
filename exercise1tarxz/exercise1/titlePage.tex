@@ -1,0 +1,134 @@
+
+
+\subsection*{students handing in this solution set}
+
+\begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}lll}
+  \toprule
+  last name & first name & student ID & enrolled with \\
+  \midrule
+  \midrule
+  %%%
+  %%% enter data of 1st student here (i.e replace the following place holders)
+  %%%
+  Bach
+  & Franziska
+  & 123456
+  & B-IT / RWTH Aachen
+  \\
+  %%%
+  %%% enter data of 2nd student here (i.e replace the following place holders)
+  %%%
+  Wolfe
+  & Frank
+  & 654321
+  & Uni Bonn
+  \\
+  %%%
+  %%% if necessary, i.e. if there are further students in your team, add rows to this table
+  %%%
+  \bottomrule
+\end{tabular*}
+\newpage
+
+
+
+
+
+
+
+
+
+
+%%%%%
+%%%%% DO NOT EDIT THE FOLLOWING
+%%%%%
+
+\subsection*{general remarks}
+
+As you know, your instructor is an avid  proponent of open science and education. Therefore, \textbf{MATLAB implementations will not be accepted} in this course.
+
+The goal of this exercise is to get used to practical image processing in python / numpy / scipy. There are numerous Web resources related to python programming; numpy and scipy are mostly well documented and matplotlib, too, comes with numerous tutorials. Play with the code that is provided. The tasks below are rather simple; if you do not have any ideas for how to solve them, just look around for ideas as to how it can be done.
+
+Also, \textbf{do NOT use additional third party libraries such as \texttt{OpenCV} or \texttt{scikit-image} for the coding tasks in this course!}
+
+Why not? Because our goal in this course and its exercises is to learn about theory and practice of image processing on a reasonably foundational level. Regarding practical implementations of image processing algorithms, solutions in C or even assembler would constitute the most foundational level but likely be unreasonable. While working with python / numpy / scipy is still foundational enough, working with libraries such as \texttt{OpenCV} or \texttt{scikit-image} is definitely not. 
+
+Think of it like this: if you train yourself to become a library monkey then what are you going to do when you are supposed to solve a problem for which there is no convenient library function available? How can you be sure that you really learned how to turn mathematics into computer code if all you ever do is stitching together other people's solutions to seemingly related problems?
+
+\textbf{When handing solutions, always strive for excellence!} Your code and results will be checked and need to be convincing, reproducible, and comprehensible. If your solutions meet these criteria and you can demonstrate that they work in practice, it is a \emph{satisfactory} solution.
+
+A \emph{very good} solution requires additional efforts especially w.r.t. to readability of your code. If your code is neither commented nor well structured, your solution is not good! The same holds for your discussion of your results: these should be concise and convincing and demonstrate that you understood what the respective task  was all about. Striving for very good solutions should always be your goal!
+ 
+
+
+\newpage
+
+\subsection*{practical advice}
+
+
+
+The problem specifications you'll find below assume that you work with python / numpy / scipy. They also assume that you have imported 
+\begin{python}
+import imageio
+import numpy as np
+import scipy.ndimage as img
+\end{python}
+
+
+
+\vfill
+To read- and write images from- and to disc, you may use these functions
+\begin{python}[emph={imageRead,imageWrite}]
+def imageRead(imgname, pilmode='L', arrtype=np.float):
+    """
+    read an image file into a numpy array
+
+    imgname: str
+        name of image file to be read 
+    pilmode: str
+        for luminance / intesity images use 'L'
+        for RGB color images use 'RGB'
+    arrtype: numpy dtype
+        use np.float, np.uint8, ...
+    """
+    return imageio.imread(imgname, pilmode=pilmode).astype(arrtype)
+
+
+def imageWrite(arrF, imgname, arrtype=np.uint8):
+    """
+    write a numpy array as an image file
+    the file type is inferred from the suffix of parameter imgname, e.g. '.png'
+
+    arrF: array_like
+        array to be written
+    imgname: str
+        name of image file to be written
+    arrtype: numpy dtype
+        use np.uint8, ...
+    """
+    imageio.imwrite(imgname, arrF.astype(arrtype))
+\end{python}
+
+
+
+\vfill
+To display an intensity image on your screen, you could use the following
+\begin{python}
+import matplotlib.pyplot as plt
+
+arrF = imageRead('portrait.png')
+plt.imshow(arrF / 255, cmap='gray')
+plt.show()
+\end{python}
+
+
+
+To display an (RGB) color image on screen, you might use
+\begin{python}
+import matplotlib.pyplot as plt
+
+arrF = imageRead('../exercise1/Data/asterixRGB.png', pilmode='RGB')
+plt.imshow(arrF / 255)
+plt.show()
+\end{python}
+

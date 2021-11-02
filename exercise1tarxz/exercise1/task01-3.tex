@@ -1,0 +1,35 @@
+
+\subsection*{task 1.3 \\[1ex] working with RGB color images}
+
+In the \texttt{Data} folder, you will find the color image
+\begin{quote}
+    \texttt{asterixRGB.png}
+\end{quote}
+Read it into an array \texttt{arrF} using 
+\begin{python}
+arrF = imageRead('asterixRGB.png', pilmode='RGB')
+\end{python}
+
+Print the shape parameters of \texttt{arrF} and run the following snippet
+\begin{python}
+arrG = np.copy(arrF)
+arrG[:,:,0] = 0
+\end{python}
+
+Write the resulting array \texttt{arrG} as a PNG file and enter it here
+%%%%%
+%%%%%
+%%%%% enter your image here, i.e. replace "placeholder.pdf" by the name of the image file you created
+%%%%%
+%%%%%
+\begin{center}
+\includegraphics[width=0.5\textwidth]{placeholder.pdf} 
+\end{center}
+%%%%%
+%%%%%
+%%%%%
+%%%%%
+%%%%%
+
+
+

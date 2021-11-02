@@ -1,0 +1,80 @@
+
+\subsection*{task 1.2 \\[1ex] timing the emboss effect}
+
+In the lecture, we also performed experiments to determine the minimum average runtime of our different methods for the \emph{emboss} effect. In this task you are supposed to conduct these experiments on your own machines.
+
+Assuming that you have read an input intensity image into an array \texttt{arrF}, you may use the following code snippets for this purpose
+\begin{python}
+import timeit, functools
+
+
+mtds = [embossV1, embossV2, embossV3, embossV4]
+
+nRep =   3
+nRun = 100
+    
+for mtd in mtds:
+	ts = timeit.Timer(functools.partial(mtd, arrF)).repeat(nRep, nRun)
+	print (min(ts) / nRun)
+\end{python}
+
+
+
+\begin{description}
+\item[task 1.2(a):] In the \texttt{Data} folder, you will find the intensity image
+\begin{quote}
+    \texttt{portrait.png}
+\end{quote}
+Read it into an array \texttt{arrF}, print its shape, and run the above timing script.
+\color{blue} \\[1ex]
+%%%%%
+%%%%%
+%%%%% enter your result here
+%%%%%
+%%%%%
+enter your result here \ldots
+%%%%%
+%%%%%
+%%%%%
+%%%%%
+%%%%%
+\color{black}
+
+\item[task 1.2(b):] In the \texttt{Data} folder, you will find the intensity image
+\begin{quote}
+    \texttt{asterix.png}
+\end{quote}
+Read it into an array \texttt{arrF}, print its shape, and run the above timing script.
+\color{blue} \\[1ex]
+%%%%%
+%%%%%
+%%%%% enter your result here
+%%%%%
+%%%%%
+enter your result here \ldots
+%%%%%
+%%%%%
+%%%%%
+%%%%%
+%%%%%
+\color{black}
+
+\newpage
+\item[task 1.2(c):] Discuss your results. What do your experiments reveal? Is there any noteworthy difference between the runtimes for the two images? If so, what is the difference? What causes this difference? What does this tell you about image processing in general?
+\color{blue} \\[1ex]
+%%%%%
+%%%%%
+%%%%% enter your discussion here
+%%%%%
+%%%%%
+enter your discussion here \ldots
+%%%%%
+%%%%%
+%%%%%
+%%%%%
+%%%%%
+\color{black}
+\end{description}
+
+
+
