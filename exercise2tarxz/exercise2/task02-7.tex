@@ -1,0 +1,119 @@
+
+\subsection*{task 2.7 \\[1ex] outer products}
+
+The outer product of an ordered pair of vectors (or 1D \emph{numpy} arrays) $\vec{x}, \vec{y}$ of sizes $m$ and $n$  respectively is the Kronecker product of $\vec{x}$ and $\trn{\vec{y}}$
+\begin{equation*}
+\mat{Z} = \vec{x} \otimes \trn{\vec{y}}
+=
+\begin{bmatrix}
+x_1 \, \trn{\vec{y}} \\
+x_2 \, \trn{\vec{y}} \\
+\vdots \\
+x_m \, \trn{\vec{y}}
+\end{bmatrix}
+=
+\begin{bmatrix}
+x_1 y_1 & x_1 y_2 & \cdots & x_1 y_n \\
+x_2 y_1 & x_2 y_2 & \cdots & x_2 y_n \\
+\vdots & \vdots & \ddots & \vdots \\
+x_m y_1 & x_m y_2 & \cdots & x_m y_n \\
+\end{bmatrix}
+\end{equation*}
+and therefore produces a matrix (or 2D array) $\mat{Z}$ of size $m \times n$.
+
+Note that we typically write the vector outer product $\vec{x} \otimes \trn{\vec{y}}$ as $\opt{\vec{x}}{\vec{y}}$ and that the entries of $\mat{Z}$ are given by $z_{ij} = x_i y_j$.
+
+Conveniently, \emph{numpy} provides the function \keyword{np.outer()} for the computation of outer products of vectors (or 1D arrays). This will come in handy later in this course. For now, execute the following snippet
+\begin{python}
+sigma = 5.
+msize = int(np.ceil(sigma * 2.575) * 2 + 1)
+
+xs    = np.arange(msize)
+vecG  = np.exp(-0.5 * ((xs-msize/2) / sigma)**2).reshape(msize,1)
+vecG /= np.sum(vecG)
+\end{python}
+determine the size of array \texttt{vecG} and enter your result here
+\color{blue} \\[1ex]
+%%%%%
+%%%%%
+%%%%% enter your result here
+%%%%%
+%%%%%
+enter your result here \ldots
+%%%%%
+%%%%%
+%%%%%
+%%%%%
+%%%%%
+\color{black}
+
+
+
+\vspace{1cm}
+Next, execute the following snippet
+\begin{python}
+matG  = np.outer(vecG, vecG)
+matG /= np.sum(matG)
+\end{python}
+determine the size of array \texttt{matG} and enter your result here
+\color{blue} \\[1ex]
+%%%%%
+%%%%%
+%%%%% enter your result here
+%%%%%
+%%%%%
+enter your result here \ldots
+%%%%%
+%%%%%
+%%%%%
+%%%%%
+%%%%%
+\color{black}
+
+
+
+\newpage
+\textbf{Note:} There is a difference between the outer product of two vectors and the Kronecker product of two vectors. To see this difference for yourself, execute the following snippet
+\begin{python}
+vecH  = np.kron(vecG, vecG)
+vecH /= np.sum(vecH)
+\end{python}
+determine the size of array \texttt{vecH} and enter your result here
+\color{blue} \\[1ex]
+%%%%%
+%%%%%
+%%%%% enter your result here
+%%%%%
+%%%%%
+enter your result here \ldots
+%%%%%
+%%%%%
+%%%%%
+%%%%%
+%%%%%
+\color{black}
+
+
+
+\vspace{1cm}
+Finally, turn the two arrays \texttt{vecG} and \texttt{matG} into two arrays \texttt{arrg} and \texttt{arrG} which you can save as PNG images. To this end, execute the following snippet 
+\begin{python}
+arrg = np.interp(vecG, (vecG.min(), vecG.max()), (0, 255))
+arrG = np.interp(matG, (matG.min(), matG.max()), (0, 255))
+\end{python}
+then write the resulting images to disc and have a look at them.
+
+Can you ``see'' what you just computed? That is, do you recognize what the two images visualize?
+\color{blue} \\[1ex]
+%%%%%
+%%%%%
+%%%%% enter your discussion here
+%%%%%
+%%%%%
+enter your discussion here \ldots
+%%%%%
+%%%%%
+%%%%%
+%%%%%
+%%%%%
+\color{black}

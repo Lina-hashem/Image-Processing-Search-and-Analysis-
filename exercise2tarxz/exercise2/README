@@ -1,0 +1,79 @@
+
+PLEASE FOLLOW THE INSTRUCTIONS BELOW WHEN YOU START
+WORKING ON THIS EXERCISE AND HAND IN YOUR SOLUTIONS.
+
+
+
+This folder contains 9 LaTeX files
+
+  exercise2Sheets.tex
+  task02-1.tex
+  task02-2.tex
+  task02-3.tex
+  task02-4.tex
+  task02-5.tex
+  task02-6.tex
+  task02-7.tex
+  titlePage.tex
+
+
+It also contains the file
+
+   ex2Sheets.pdf
+   
+which shows how your submission should look like in
+the end (however, it does not contain the solutions).
+
+
+There also is a folder Data which contains two image
+files which you will need for your practical work.
+
+
+
+
+
+TO HAND IN YOUR SOLUTIONS, PLEASE PROCEED AS FOLLOWS:
+
+0) The main LaTeX file for this exercise is exercise2Sheets.tex;
+it uses \include{} commands to include the files which you have
+to edit as discussed below:
+
+
+
+1) At the very beginning of file titlePage.tex, you find 
+the definition of a table. Enter the names and affiliations
+of the students in your team into this table.
+
+Apart from this, do NOT edit the file titlePage.tex !
+
+
+
+2) The files task02-[1-7].tex contain the problems 
+your are supposed solve in this exercise. To enter your
+solutions, edit the parts of these files that are marked
+for editing. 
+
+
+
+3) Once you have solved the problems, compile exercise1Sheets.tex
+into a PDF file.
+
+
+
+4) Rename the resulting file to
+
+   LastnameFirstname.pdf
+   
+where Lastname and Firstname are your team captain's last- and first name.
+
+
+
+5) Upload the file LastnameFirstname.pdf to eCampus.   
+
+
+
+6) Your solution must be received no later than 11:59am CET, Nov 14, 2021.
+
+
+
+

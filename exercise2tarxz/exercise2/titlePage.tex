@@ -1,0 +1,91 @@
+
+
+\subsection*{students handing in this solution set}
+
+\begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}lll}
+  \toprule
+  last name & first name & student ID & enrolled with \\
+  \midrule
+  \midrule
+  %%%
+  %%% enter data of 1st student here (i.e replace the following place holders)
+  %%%
+  Bach
+  & Franziska
+  & 123456
+  & B-IT / RWTH Aachen
+  \\
+  %%%
+  %%% enter data of 2nd student here (i.e replace the following place holders)
+  %%%
+  Wolfe
+  & Frank
+  & 654321
+  & Uni Bonn
+  \\
+  %%%
+  %%% if necessary, i.e. if there are further students in your team, add rows to this table
+  %%%
+  \bottomrule
+\end{tabular*}
+\newpage
+
+
+
+
+
+
+
+
+
+
+%%%%%
+%%%%% DO NOT EDIT THE FOLLOWING
+%%%%%
+\subsection*{practical advice}
+
+
+
+The problem specifications you'll find below assume that you work with python / numpy / scipy. They also assume that you have imported 
+\begin{python}
+import imageio
+import numpy as np
+import numpy.random as rnd
+\end{python}
+
+
+
+\vspace{2cm}
+To read- and write images from- and to disc, you may use these functions
+\begin{python}[emph={imageRead,imageWrite}]
+def imageRead(imgname, pilmode='L', arrtype=np.float):
+    return imageio.imread(imgname, pilmode=pilmode).astype(arrtype)
+
+
+def imageWrite(arrF, imgname, arrtype=np.uint8):
+    imageio.imwrite(imgname, arrF.astype(arrtype))
+\end{python}
+
+
+
+\vspace{2cm}
+To display an intensity image on your screen, you could use the following
+\begin{python}
+import matplotlib.pyplot as plt
+
+arrF = imageRead('portrait.png')
+plt.imshow(arrF / 255, cmap='gray')
+plt.show()
+\end{python}
+
+
+
+To display an (RGB) color image on your screen, you might want to use
+\begin{python}
+import matplotlib.pyplot as plt
+
+arrF = imageRead('../exercise1/Data/asterixRGB.png', pilmode='RGB')
+plt.imshow(arrF / 255)
+plt.show()
+\end{python}
+
