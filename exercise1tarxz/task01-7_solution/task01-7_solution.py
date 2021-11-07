@@ -1,6 +1,6 @@
 import numpy as np
 import exercise1tarxz.Img as img
-
+import time
 
 # ringmask function form the lecture
 def ringmask(arrF, c, rmin, rmax):
@@ -14,7 +14,8 @@ def ringmask(arrF, c, rmin, rmax):
     arrG[bmask] = 255
     return arrG
 
-
+# starting time
+start = time.time()
 # read image into a numpy array
 arrF = img.imageRead(imgname='portrait.png', pilmode='L')
 # divide the image into 16 blocks and start at center point 32,32
@@ -33,3 +34,8 @@ mask = np.equal(arrF, 255) # set all white pixels to true
 arrG = img.imageRead(imgname='portrait.png', pilmode='L')
 arrG[~mask] = 255 # using the inverse of ringmask_intermediateStage set the true pixels (edges) to 255
 img.imageWrite(arrG, 'ringmask_Final.png')
+# end time
+end = time.time()
+
+# total time taken
+print(f"Runtime of the program is {end - start}")
